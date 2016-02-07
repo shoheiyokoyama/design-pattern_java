@@ -29,6 +29,10 @@ public class Main {
 		Print print = new PrintBanner("Adapter Pattern");
 		print.printWeak();
 		print.printStrong();
+		
+		PrintForDelegation printForDelegation = new PrintBannerForDelegation("Adapter Pattern");
+		printForDelegation.printWeak();
+		printForDelegation.printStrong();
 	}
 
 }
