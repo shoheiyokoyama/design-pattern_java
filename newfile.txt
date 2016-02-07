@@ -1,0 +1,6 @@
+#Written by FileProperties
+#Sun Feb 07 20:49:50 JST 2016
+DesignPattern=Adapter
+Apple=iPhone
+Git=Hub
+Google=Android

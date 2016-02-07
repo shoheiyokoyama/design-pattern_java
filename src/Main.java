@@ -1,12 +1,13 @@
+import java.io.IOException;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		//IteratorPattern
+		//Iterator-Pattern
 //		testIteratorPattern();
 		
-		//AdapterPattern
+		//Adapter-Pattern
 		testAdapterPattern();
 	}
 	
@@ -33,6 +34,17 @@ public class Main {
 		PrintForDelegation printForDelegation = new PrintBannerForDelegation("Adapter Pattern");
 		printForDelegation.printWeak();
 		printForDelegation.printStrong();
+		
+		FileIo fileIo = new FileProperties();
+		try {
+			fileIo.readFromFile("file.txt");
+			fileIo.setValue("Apple", "iPhone");
+			fileIo.setValue("Google", "Android");
+			fileIo.setValue("Git", "Hub");
+			fileIo.setValue("DesignPattern", "Adapter");
+			fileIo.writeToFile("newfile.txt");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-
 }
