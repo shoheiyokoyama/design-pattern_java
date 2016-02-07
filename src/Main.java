@@ -2,8 +2,12 @@
 public class Main {
 
 	public static void main(String[] args) {
+		
 		//IteratorPattern
-		testIteratorPattern();
+//		testIteratorPattern();
+		
+		//AdapterPattern
+		testAdapterPattern();
 	}
 	
 	public static void testIteratorPattern() {
@@ -19,6 +23,12 @@ public class Main {
 			Book book = (Book)iterator.next();
 			System.out.println(book.getName());
 		}
+	}
+	
+	public static void testAdapterPattern() {
+		Print print = new PrintBanner("Adapter Pattern");
+		print.printWeak();
+		print.printStrong();
 	}
 
 }
