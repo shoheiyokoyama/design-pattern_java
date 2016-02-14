@@ -7,7 +7,7 @@ public class CharDisplay extends AbstractDisplay {
 	}
 	
 	public void open() {
-		System.out.print("<<");
+		System.out.print("***");
 	}
 	
 	public void print() {
@@ -15,7 +15,7 @@ public class CharDisplay extends AbstractDisplay {
 	}
 	
 	public void close() {
-		System.out.println(">>");
+		System.out.println("***");
 	}
 
 }

@@ -1,8 +1,8 @@
 
 public abstract class AbstractDisplay {
-	public abstract void open();
-	public abstract void print();
-	public abstract void close();
+	protected abstract void open();
+	protected abstract void print();
+	protected abstract void close();
 	public final void display() {
 		open();
 		for (int i =0; i < 5; i++) {
