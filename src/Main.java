@@ -8,7 +8,10 @@ public class Main {
 //		testIteratorPattern();
 		
 		//Adapter-Pattern
-		testAdapterPattern();
+//		testAdapterPattern();
+		
+		//TemplateMethod-Pattern
+		testTemplateMethodPattern();
 	}
 	
 	public static void testIteratorPattern() {
@@ -46,5 +49,19 @@ public class Main {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void testTemplateMethodPattern() {
+		
+		AbstractDisplay cd = new CharDisplay('T');
+		
+		AbstractDisplay sd = new StringDisplay("Hello World");
+		
+		AbstractDisplay sd2 = new StringDisplay("KONNITIWA SEKAI");
+		
+		cd.display();
+		sd.display();
+		sd2.display();
+		
 	}
 }
