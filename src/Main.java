@@ -1,5 +1,8 @@
 import java.io.IOException;
 
+import com.shohei_yokoyama.factory_framework.*;
+import com.shohei_yokoyama.factory_account.*;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -11,7 +14,10 @@ public class Main {
 //		testAdapterPattern();
 		
 		//TemplateMethod-Pattern
-		testTemplateMethodPattern();
+//		testTemplateMethodPattern();
+		
+		//FactoryMethod-Pattern
+		testFactoryMethodPattern();
 	}
 	
 	public static void testIteratorPattern() {
@@ -63,5 +69,17 @@ public class Main {
 		sd.display();
 		sd2.display();
 		
+	}
+	
+	public static void testFactoryMethodPattern() {
+		
+		Factory factory = new AccountFactory();
+		Product account1 = factory.create("Ralph Johnson");
+		Product account2 = factory.create("Richard Helm");
+		Product account3 = factory.create("John Vlissides");
+		
+		account1.use();
+		account2.use();
+		account3.use();
 	}
 }
