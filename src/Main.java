@@ -18,6 +18,9 @@ public class Main {
 		
 		//FactoryMethod-Pattern
 		testFactoryMethodPattern();
+		
+		//Singleton-Pattern
+		testSingletonPattern();
 	}
 	
 	public static void testIteratorPattern() {
@@ -83,5 +86,19 @@ public class Main {
 		account2.use();
 		account3.use();
 		account4.use();
+	}
+	
+	public static void testSingletonPattern() {
+		System.out.println("Start");
+		Singleton instance1 = Singleton.getInstance();
+		Singleton instance2 = Singleton.getInstance();
+		
+		if (instance1 == instance2) {
+			System.out.println("instance1 and instance2 are same Instance");
+		} else {
+			System.out.println("instance1 and instance2 aren't same Instance");
+		}
+		
+		System.out.println("End");
 	}
 }
