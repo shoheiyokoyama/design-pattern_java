@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="Singleton"/>
 	<classpathentry kind="src" path="FactoryMethod"/>
 	<classpathentry kind="src" path="TemplateMethod"/>
 	<classpathentry kind="src" path="Adapter"/>
