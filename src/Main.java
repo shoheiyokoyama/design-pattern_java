@@ -1,7 +1,9 @@
 import java.io.IOException;
 
 import com.shohei_yokoyama.factory_framework.*;
+import com.shohei_yokoyama.factory_framework.Product;
 import com.shohei_yokoyama.factory_account.*;
+import com.shohei_yokoyama.prototype_framework.*;
 
 public class Main {
 
@@ -17,10 +19,32 @@ public class Main {
 //		testTemplateMethodPattern();
 		
 		//FactoryMethod-Pattern
-		testFactoryMethodPattern();
+//		testFactoryMethodPattern();
 		
 		//Singleton-Pattern
-		testSingletonPattern();
+//		testSingletonPattern();
+		
+		//Prototype-Pattern
+		testPrototypePattern();
+	}
+	
+	public static void testPrototypePattern() {
+		
+		Manager manager = new Manager();
+		UnderLinepen upen = new UnderLinepen('~');
+		MessageBox mbox = new MessageBox('*');
+		MessageBox sbox = new MessageBox('/');
+		
+		manager.register("stong message", upen);
+		manager.register("warning box", mbox);
+		manager.register("slash box", sbox);
+		
+		PrototypeProduct p1 = manager.create("stong message");
+		p1.use("Git Hub");
+		PrototypeProduct p2 = manager.create("warning box");
+		p2.use("Qiita");
+		PrototypeProduct p3 = manager.create("slash box");
+		p3.use("Java");
 	}
 	
 	public static void testIteratorPattern() {
@@ -77,6 +101,7 @@ public class Main {
 	public static void testFactoryMethodPattern() {
 		
 		Factory factory = new AccountFactory();
+
 		Product account1 = factory.create("Ralph Johnson");
 		Product account2 = factory.create("Richard Helm");
 		Product account3 = factory.create("John Vlissides");
@@ -89,7 +114,7 @@ public class Main {
 	}
 	
 	public static void testSingletonPattern() {
-		System.out.println("Start");
+//		System.out.println("Start");
 		Singleton instance1 = Singleton.getInstance();
 		Singleton instance2 = Singleton.getInstance();
 		
@@ -98,7 +123,24 @@ public class Main {
 		} else {
 			System.out.println("instance1 and instance2 aren't same Instance");
 		}
+//		
+//		System.out.println("End");
+//		
+//		System.out.println("Start");
+//		
+//		for (int i = 0; i < 10; i++) {
+//			System.out.println(i + ":" + TicketMaker.getInstance().getNextTicketNumber());
+//		}
+//		System.out.println("End");
 		
+		System.out.println("Start");
+		for (int i = 0; i < 9; i ++) {
+			Triple triple = Triple.getInstance(i % 3);
+			System.out.println(i + ":" + triple);
+		}
 		System.out.println("End");
 	}
+	
+	
+	
 }
