@@ -31,9 +31,9 @@ public class Main {
 	public static void testPrototypePattern() {
 		
 		Manager manager = new Manager();
-		UnderLinepen upen = new UnderLinepen('~');
-		MessageBox mbox = new MessageBox('*');
-		MessageBox sbox = new MessageBox('/');
+		UnderLinepen upen = new UnderLinepen('-');
+		MessageBox mbox = new MessageBox('@');
+		MessageBox sbox = new MessageBox('♪');
 		
 		manager.register("stong message", upen);
 		manager.register("warning box", mbox);
